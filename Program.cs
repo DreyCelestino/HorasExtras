@@ -12,17 +12,39 @@ salariox = 40
 x = (40 * salario) / 100
 */
 
-//string lerSalario, lerHoras, lerExtras;
+string lerSalario, lerHoras, lerExtras;
 float salario, horas, extras, salarioextra, pagamento;
 
 Console.WriteLine("Seu salário por hora?:");
-salario = Convert.ToSingle(Console.ReadLine());
+lerSalario = Console.ReadLine()!;
+
+while (!(Single.TryParse(lerSalario, out float teste)))
+{
+    Console.WriteLine("Não é um número! Tente novamente.");
+    lerSalario = Console.ReadLine()!;
+}
 
 Console.WriteLine("Quantas você trabalhou excluindo extras?");
-horas = Convert.ToSingle(Console.ReadLine());
+lerHoras = Console.ReadLine()!;
+
+while (!(Single.TryParse(lerHoras, out float teste)))
+{
+    Console.WriteLine("Não é um número! Tente novamente.");
+    lerHoras = Console.ReadLine()!;
+}
 
 Console.WriteLine("Quantas horas extras você trabalhou?");
-extras = Convert.ToSingle(Console.ReadLine());
+lerExtras = Console.ReadLine()!;
+
+while (!(Single.TryParse(lerExtras, out float teste)))
+{
+    Console.WriteLine("Não é um número! Tente novamente.");
+    lerExtras = Console.ReadLine()!;
+}
+
+salario = Convert.ToSingle(lerSalario);
+horas = Convert.ToSingle(lerHoras);
+extras = Convert.ToSingle(lerExtras);
 
 salarioextra = (40 * salario) / 100;
 
